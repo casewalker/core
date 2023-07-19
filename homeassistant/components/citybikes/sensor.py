@@ -304,7 +304,9 @@ class CityBikesStation(SensorEntity):
         self._attr_native_value = station_data.get(ATTR_FREE_BIKES)
         self._attr_extra_state_attributes = {
             ATTR_UID: station_data.get(ATTR_EXTRA, {}).get(ATTR_UID),
-            ATTR_HAS_EBIKES: station_data.get(ATTR_EXTRA, {}).get(ATTR_HAS_EBIKES, False),
+            ATTR_HAS_EBIKES: station_data.get(ATTR_EXTRA, {}).get(
+                ATTR_HAS_EBIKES, False
+            ),
             ATTR_EBIKES: station_data.get(ATTR_EXTRA, {}).get(ATTR_EBIKES, 0),
             ATTR_LATITUDE: station_data.get(ATTR_LATITUDE),
             ATTR_LONGITUDE: station_data.get(ATTR_LONGITUDE),
